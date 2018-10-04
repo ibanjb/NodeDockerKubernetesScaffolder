@@ -1,0 +1,15 @@
+{
+    "name": "your_project",
+    "version": "1.0.0",
+    "description": "your_project",
+    "title": "your_project",
+    "url" : "https://dsu-bitbucket.nestle.biz/scm/ciam/ciam_development/your_project",
+    "header": {
+        "title": "your_project"
+    },
+    "template": {
+        "withCompare": false,
+        "withGenerator": false
+    },
+    "forceLanguage": "en"
+}

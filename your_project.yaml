@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: production
+  name: your_project
+spec:
+  selector:
+    matchLabels:
+      app: your_project
+  replicas: 1
+  template:
+    metadata: 
+      labels:
+        app: your_project
+    spec:
+      containers:
+      - name: your_project
+        image: corecontainer.azurecr.io/your_project:production
+      imagePullSecrets:
+        - name: corecontainer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: production
+  name: your_project-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: your_project
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 3000
+  - name: https
+    protocol: TCP
+    port: 443
+    targetPort: 3000

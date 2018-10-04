@@ -1,0 +1,57 @@
+{
+  "name": "your_project",
+  "version": "1.0.0",
+  "description": "your_project",
+  "author": "Iban Balasch",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://dsu-bitbucket.nestle.biz/scm/ciam/your_project.git"
+  },
+  "main": "dist/server.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "authentication api azure aad nodejs ciam"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "dist": "npm run build -s && node ./dist/server",
+    "start:dev": "nodemon --exec babel-node src/server.js",
+    "docs": "apidoc -e \"node_modules\"",
+    "test": "jest",
+    "coverage": "jest --collectCoverageFrom=src/**.js --collectCoverageFrom=!src/server.js --coverage",
+    "docker": "docker build -t your_project:development ."
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.1",
+    "express": "^4.16.3",
+    "properties-reader": "0.0.16",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "styled-components": "^2.2.4",
+    "webpack": "^3.8.1",
+    "webpack-node-externals": "^1.2.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.4",
+    "dependency-check": "^2.5.1",
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "jest": "^23.1.0"
+  }
+}
